@@ -1,6 +1,6 @@
 # QueryBuilder
 
-## 25.7.15
+## 25.7.15-1
 
 QueryBuilder is a PHP class used for generating MariaDB friendly prepared statements.
 
