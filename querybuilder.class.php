@@ -115,4 +115,15 @@ class QueryBuilder
 
         return $this;
     }
+
+    public function where(array $conditions = [])
+    {
+        if (empty($this->where)) {
+            if (!empty($conditions) && count($conditions) > 0) {
+                $this->where = 'WHERE ' . implode(' AND ', $conditions);
+            }
+        }
+
+        return $this;
+    }
 }
