@@ -2,7 +2,7 @@
 
 /**
  * @author  Peter Knowles <pknowles@tpnsolutions.com>
- * @version 25.7.15-1
+ * @version 25.7.15-2
  */
 
 // declare
@@ -110,6 +110,17 @@ class QueryBuilder
         if (empty($this->order)) {
             if (!empty($columns) && count($columns) > 0) {
                 $this->order = 'ORDER BY ' . implode(', ', $columns);
+            }
+        }
+
+        return $this;
+    }
+
+    public function select(array $columns = [])
+    {
+        if (empty($this->select)) {
+            if (!empty($columns) && count($columns) > 0) {
+                $this->select = 'SELECT ' . implode(', ', $columns);
             }
         }
 
